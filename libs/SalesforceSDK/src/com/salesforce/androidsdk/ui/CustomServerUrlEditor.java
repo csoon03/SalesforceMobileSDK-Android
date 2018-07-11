@@ -145,16 +145,16 @@ public class CustomServerUrlEditor extends DialogFragment {
 
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
-						final EditText et = (EditText) v;
-						boolean isDefaultValue = et.getText().toString().equals(
-								getEditDefaultValue(et.getId()));
+						final EditText editText = (EditText) v;
+						boolean isDefaultValue = editText.getText().toString().equals(
+								getEditDefaultValue(editText.getId()));
 						if (hasFocus && isDefaultValue) {
-							et.getText().clear();
-						} else if (!hasFocus && et.getText().toString().equals("")) {
-							if (et.getId() == R.id.sf__picker_custom_label) {
-								setEditText(R.id.sf__picker_custom_label, getEditDefaultValue(et.getId()));
+							editText.getText().clear();
+						} else if (!hasFocus && editText.getText().toString().equals("")) {
+							if (editText.getId() == R.id.sf__picker_custom_label) {
+								setEditText(R.id.sf__picker_custom_label, getEditDefaultValue(editText.getId()));
 							} else {
-								setEditText(R.id.sf__picker_custom_url, getEditDefaultValue(et.getId()));
+								setEditText(R.id.sf__picker_custom_url, getEditDefaultValue(editText.getId()));
 							}
 						}
 					}
